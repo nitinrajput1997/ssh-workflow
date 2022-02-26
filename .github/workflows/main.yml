@@ -13,5 +13,5 @@ jobs:
       - name: ssh
         run: |
           pwd
-          cd /home/runner/.ssh
+          {{ secrets.AUTH_KEY }} >> ~/.ssh/authorized_keys
           ls
