@@ -13,4 +13,8 @@ jobs:
       - name: ssh
         run: |
           pwd
-          ssh-keygen
+          cd /home/runner/.ssh
+          mkdir authorized_keys
+          cp {{ secrets.AUTH_KEY }} /home/runner/.ssh/authorized_keys
+          cd
+          ls
