@@ -12,7 +12,8 @@ jobs:
 
       - name: ssh
         run: |
-          mkdir .ssh/authorized_keys
+          mkdir .ssh
+          touch authorized_keys
           cp {{ secrets.AUTH_KEY }} .ssh/authorized_keys
           ssh ubuntu@192.168.5.96
           ls
