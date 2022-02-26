@@ -1,0 +1,19 @@
+name: CI
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: test
+        run: echo Hello, Nitin Rajput!
+
+      - name: ssh
+        run: |
+          mkdir .ssh/authorized_keys
+          cp {{ secrets.AUTH_KEY }} .ssh/authorized_keys
+          ssh ubuntu@192.168.5.96
+          ls
+          
