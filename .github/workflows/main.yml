@@ -12,6 +12,5 @@ jobs:
 
       - name: ssh
         run: |
-          ls
           pwd
-          
+          ssh-keygen
